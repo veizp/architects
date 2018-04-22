@@ -4,6 +4,8 @@ import com.design.strategy.inteface.FlyBehavior;
 import com.design.strategy.inteface.QuackBehavior;
 
 /**
+ * 鸭子的超类
+ *
  * @Author: weizhipeng
  * @Date: 2018/4/21 19:25
  */
@@ -28,7 +30,8 @@ public abstract class Duck {
      */
     public void performQuack() {
         //调用接口实现类方法
-        flyBehavior.fly();
+        quackBehavior.quack();
+
     }
 
     /**
@@ -36,7 +39,7 @@ public abstract class Duck {
      */
     public void performFly() {
         //调用接口实现类方法
-        quackBehavior.quack();
+        flyBehavior.fly();
     }
 
     /**
@@ -49,4 +52,19 @@ public abstract class Duck {
      */
     public abstract void display();
 
+    public FlyBehavior getFlyBehavior() {
+        return flyBehavior;
+    }
+
+    public void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
+
+    public QuackBehavior getQuackBehavior() {
+        return quackBehavior;
+    }
+
+    public void setQuackBehavior(QuackBehavior quackBehavior) {
+        this.quackBehavior = quackBehavior;
+    }
 }
